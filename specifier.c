@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * get_specifier - finds the format func
- * @s: the format string
- *
+ * get_specifier - finds the format function
+ * @s: string of the format
  * Return: the number of bytes printed
  */
+
 int (*get_specifier(char *s))(va_list ap, params_t *params)
+
 {
 	specifier_t specifiers[] = {
 		{"c", print_char},
@@ -25,6 +26,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"R", print_rot13},
 		{NULL, NULL}
 	};
+
 	int i = 0;
 
 	while (specifiers[i].specifier)
@@ -39,13 +41,13 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 }
 
 /**
- * get_print_func - finds the format func
- * @s: the format string
+ * get_print_func - finds the format function
+ * @s: string of the format
  * @ap: argument pointer
  * @params: the parameters struct
- *
  * Return: the number of bytes printed
  */
+
 int get_print_func(char *s, va_list ap, params_t *params)
 {
 	int (*f)(va_list, params_t *) = get_specifier(s);
@@ -56,14 +58,14 @@ int get_print_func(char *s, va_list ap, params_t *params)
 }
 
 /**
- * get_flag - finds the flag func
+ * get_flag - finds the flag functions
  * @s: the format string
  * @params: the parameters struct
- *
  * Return: if flag was valid
  */
 
 int get_flag(char *s, params_t *params)
+
 {
 	int i = 0;
 
@@ -89,10 +91,9 @@ int get_flag(char *s, params_t *params)
 }
 
 /**
- * get_modifier - finds the modifier func
- * @s: the format string
- * @params: the parameters struct
- *
+ * get_modifier - finds the modifier function
+ * @s: string for format
+ * @params: parameter structure
  * Return: if modifier was valid
  */
 
@@ -102,12 +103,12 @@ int get_modifier(char *s, params_t *params)
 
 	switch (*s)
 	{
-	case 'h':
-		i = params->h_modifier = 1;
-		break;
-	case 'l':
-		i = params->l_modifier = 1;
-		break;
+		case 'h':
+			i = params->h_modifier = 1;
+			break;
+		case 'l':
+			i = params->l_modifier = 1;
+			break;
 	}
 	return (i);
 }
@@ -117,11 +118,12 @@ int get_modifier(char *s, params_t *params)
  * @s: the format string
  * @params: the parameters struct
  * @ap: the argument pointer
- *
  * Return: new pointer
  */
 
 char *get_width(char *s, params_t *params, va_list ap)
+
+	/* should this function use char **s and modify the pointer? */
 {
 	int d = 0;
 
