@@ -12,7 +12,9 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
-	
+		{"p", print_address},
+		{"S", print_S},
+		
 		{NULL, NULL}
 	};
 	int i = 0;
