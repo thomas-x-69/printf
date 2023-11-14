@@ -1,5 +1,5 @@
-#ifndef _PRINTF_H
-#define _PRINTF_H
+#ifndef _PRINTF_H_
+#define _PRINTF_H_
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -10,6 +10,7 @@
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
+#define FIELD_BUF_SIZE 50
 
 #define NULL_STRING "(null)"
 
@@ -116,5 +117,4 @@ char *get_precision(char *p, params_t *params, va_list ap);
 /* _prinf.c module */
 int _printf(const char *format, ...);
 
-#endif
-
+#endif /*_MAIN_H_*/
