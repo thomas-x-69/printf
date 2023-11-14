@@ -62,6 +62,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  *
  * Return: if flag was valid
  */
+
 int get_flag(char *s, params_t *params)
 {
 	int i = 0;
@@ -94,6 +95,7 @@ int get_flag(char *s, params_t *params)
  *
  * Return: if modifier was valid
  */
+
 int get_modifier(char *s, params_t *params)
 {
 	int i = 0;
@@ -118,6 +120,7 @@ int get_modifier(char *s, params_t *params)
  *
  * Return: new pointer
  */
+
 char *get_width(char *s, params_t *params, va_list ap)
 {
 	int d = 0;
